@@ -1,0 +1,35 @@
+{
+  "name": "yourls-telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "ts-node-dev -r dotenv/config .",
+    "start": "npm run build && node -r dotenv/config build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectWibbas/yourls-telegram-bot.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProjectWibbas/yourls-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/ProjectWibbas/yourls-telegram-bot#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "got": "^11.8.3",
+    "grammy": "^1.8.3",
+    "joi": "^17.6.0",
+    "nanoid": "^3.3.4"
+  },
+  "devDependencies": {
+    "@types/got": "^9.6.12",
+    "@types/node": "^17.0.35",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.2"
+  }
+}
