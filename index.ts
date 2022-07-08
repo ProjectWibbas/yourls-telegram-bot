@@ -9,7 +9,7 @@ const bot = new Bot(BOT_TOKEN);
 bot.command("start", (ctx) =>
   ctx.reply(
     //prettier-ignore
-    "Hi! Send a URL for me to shorten.\nYou can also set a custom url like\n<b>{custom url} &lt;space&gt; {original url}</b>",
+    "Hi! Send a URL for me to shorten.\nYou can also set a custom url like\n<b>{original url} &lt;space&gt; {custom keyword} </b>",
     { parse_mode: "HTML" }
   )
 );
@@ -17,7 +17,7 @@ bot.command("start", (ctx) =>
 bot.command("help", (ctx) =>
   ctx.reply(
     // prettier-ignore
-    "Get a short url by sending a url like\nhttps://www.wbba.xyz\nor create a custom url like\n<b>wbba &lt;space&gt; https://www.wbba.xyz</b>\nand get https://ln.wbba.xyz/wbba",
+    "Get a short url by sending a url like\nhttps://www.wbba.xyz\nor create a custom url like\n<b>https://www.wbba.xyz &lt;space&gt; wbba</b>\nand get https://ln.wbba.xyz/wbba",
     { parse_mode: "HTML", disable_web_page_preview: true }
   )
 );
@@ -41,8 +41,8 @@ bot.on("message", (ctx) => {
       // 2 arguments from telegram message
     } else if (custom_n_original_url.length > 1) {
       const x: telegram.UserMessage = {
-        customKeyword: custom_n_original_url[0],
-        url: custom_n_original_url[1],
+        customKeyword: custom_n_original_url[1],
+        url: custom_n_original_url[0],
       };
       if (!TeleUserMessage.validate(x).error) {
         getCustomShortUrl(ctx, x);
