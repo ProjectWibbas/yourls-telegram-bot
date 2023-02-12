@@ -21,7 +21,7 @@
   "homepage": "https://github.com/ProjectWibbas/yourls-telegram-bot#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "got": "^11.8.3",
+    "got": "^12.5.3",
     "grammy": "^1.8.3",
     "joi": "^17.6.0",
     "nanoid": "^3.3.4"
